@@ -9,7 +9,7 @@
 try:
         
     # Create a variable pointing to the file with no header
-    fileName = "data/raw/SaraNoHeader.txt"
+    fileName = "data/raw/sara.txt"
     
     # Open the file as a read-only file object
     fileObj = open(fileName, 'r')
@@ -27,7 +27,9 @@ try:
     
     # Use a for loop to read each line, one at a time, until the list is exhausted
     for lineString in lineStrings:
-    
+        #Skip non-data lines
+        if lineString[0] != '2': continue
+        
         # Use the split command to parse the items in lineString into a list object
         lineData = lineString.split("\t")
     
